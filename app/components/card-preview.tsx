@@ -33,6 +33,9 @@ interface CardPreviewProps {
         shadow: boolean
         shadowBlur: number
       }
+      x?: number
+      y?: number
+      size?: number
     }
     logoImage: {
       file?: File
@@ -41,6 +44,9 @@ interface CardPreviewProps {
         shadow: boolean
         shadowBlur: number
       }
+      x?: number
+      y?: number
+      size?: number
     }
     designStyle: {
       backgroundGradient: boolean
@@ -385,9 +391,9 @@ export function CardPreview({ cardData }: CardPreviewProps) {
         await drawImage(
           ctx,
           cardData.profileImage.file,
-          20,
-          20,
-          100,
+          cardData.profileImage.x || 20,
+          cardData.profileImage.y || 20,
+          cardData.profileImage.size || 100,
           cardData.profileImage.style
         )
       }
@@ -396,9 +402,9 @@ export function CardPreview({ cardData }: CardPreviewProps) {
         await drawImage(
           ctx,
           cardData.logoImage.file,
-          canvas.width - 120,
-          20,
-          100,
+          cardData.logoImage.x || 280,
+          cardData.logoImage.y || 20,
+          cardData.logoImage.size || 100,
           cardData.logoImage.style
         )
       }

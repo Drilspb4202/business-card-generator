@@ -503,6 +503,51 @@ export default function CardCustomizer({
                     onChange={(e) => handleFileChange(e, "profileImage")}
                   />
                   <div className="space-y-2">
+                    <Label>Позиция X</Label>
+                    <Slider
+                      min={0}
+                      max={300}
+                      step={1}
+                      value={[cardData.profileImage.x || 20]}
+                      onValueChange={(value) =>
+                        onInputChange("profileImage", {
+                          ...cardData.profileImage,
+                          x: value[0],
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Позиция Y</Label>
+                    <Slider
+                      min={0}
+                      max={250}
+                      step={1}
+                      value={[cardData.profileImage.y || 20]}
+                      onValueChange={(value) =>
+                        onInputChange("profileImage", {
+                          ...cardData.profileImage,
+                          y: value[0],
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Размер</Label>
+                    <Slider
+                      min={50}
+                      max={150}
+                      step={1}
+                      value={[cardData.profileImage.size || 100]}
+                      onValueChange={(value) =>
+                        onInputChange("profileImage", {
+                          ...cardData.profileImage,
+                          size: value[0],
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="space-y-2">
                     <Label>Форма</Label>
                     <Select
                       value={cardData.profileImage.style.shape}
@@ -552,6 +597,51 @@ export default function CardCustomizer({
                     accept="image/*"
                     onChange={(e) => handleFileChange(e, "logoImage")}
                   />
+                  <div className="space-y-2">
+                    <Label>Позиция X</Label>
+                    <Slider
+                      min={0}
+                      max={300}
+                      step={1}
+                      value={[cardData.logoImage.x || 280]}
+                      onValueChange={(value) =>
+                        onInputChange("logoImage", {
+                          ...cardData.logoImage,
+                          x: value[0],
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Позиция Y</Label>
+                    <Slider
+                      min={0}
+                      max={250}
+                      step={1}
+                      value={[cardData.logoImage.y || 20]}
+                      onValueChange={(value) =>
+                        onInputChange("logoImage", {
+                          ...cardData.logoImage,
+                          y: value[0],
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Размер</Label>
+                    <Slider
+                      min={50}
+                      max={150}
+                      step={1}
+                      value={[cardData.logoImage.size || 100]}
+                      onValueChange={(value) =>
+                        onInputChange("logoImage", {
+                          ...cardData.logoImage,
+                          size: value[0],
+                        })
+                      }
+                    />
+                  </div>
                   <ShapeCustomizer
                     element="Логотип"
                     shape={cardData.logoImage.style.shape}
